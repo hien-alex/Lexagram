@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Zen+Antique&display=swap");
+
+.form_container {
+  border: 2px solid black;
+  margin: 30px auto 30px;
+  border-radius: 5px;
+  width: 20%;
+  overflow: hidden;
+}
+
+#caption {
+  margin-bottom: 35px;
+}
+
+.form button {
+  margin-bottom: 20px;
+}

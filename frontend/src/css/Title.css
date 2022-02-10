@@ -10,12 +10,12 @@
   font-size: 2.5rem;
 }
 
-.title button {
+.addButton {
   background-color: white;
   border: none;
 }
 
 .addButton:hover {
-  transform: scale(1.05);
+  transform: scale(1.1);
   cursor: pointer;
 }
