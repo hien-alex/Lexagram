@@ -6,10 +6,10 @@ function Title() {
   return (
     <div className="title">
       <h1>Lexagram</h1>
-      <p>Upload your own image and caption!</p>
+      <p>Upload your own image with a caption!</p>
       <br />
       <button className="addButton">
-        <AiOutlinePlusCircle size={40} />
+        <AiOutlinePlusCircle size={30} />
       </button>
       <h2>Gallery</h2>
     </div>
