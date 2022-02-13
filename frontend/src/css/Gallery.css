@@ -1,0 +1,33 @@
+.image_container {
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 20px auto;
+  width: 75%;
+  margin-top: -40px;
+}
+
+.image_wrap {
+  position: relative;
+  opacity: 0.8;
+  overflow: hidden;
+  height: 0;
+  padding: 50% 0;
+}
+
+.image_wrap img {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 150%;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.image_about {
+  position: absolute;
+  left: 50%;
+  top: 90%;
+  transform: translate(-50%, -50%);
+}

@@ -2,7 +2,7 @@ import "./css/App.css";
 import React, { useState } from "react";
 import Title from "../src/components/Title.js";
 import { ThemeProvider, createTheme } from "@material-ui/core/styles";
-import Form from "../src/components/Form.js";
+import Gallery from "../src/components/Gallery.js";
 
 const theme = createTheme({
   typography: {
@@ -15,6 +15,7 @@ function App() {
     <ThemeProvider>
       <div className="App">
         <Title />
+        <Gallery />
       </div>
     </ThemeProvider>
   );

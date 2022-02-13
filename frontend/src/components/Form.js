@@ -9,7 +9,11 @@ function Form() {
       <Paper className="form">
         <Button variant="outlined">Upload Image</Button>
         <div id="caption">
-          <TextField id="standard-basic" label="Caption" variant="standard" />
+          <TextField
+            id="standard-basic"
+            label="Add a caption"
+            variant="standard"
+          />
         </div>
 
         <Button variant="outlined">Post</Button>
