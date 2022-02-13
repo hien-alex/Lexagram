@@ -8,6 +8,12 @@
   overflow: hidden;
 }
 
+label input {
+  height: 0;
+  width: 0;
+  opacity: 0;
+}
+
 #caption {
   margin-bottom: 35px;
 }
