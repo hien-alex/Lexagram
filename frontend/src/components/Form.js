@@ -1,14 +1,12 @@
 import React, { useState } from "react";
 import "../css/Form.css";
 import { Button, Paper, TextField } from "@material-ui/core";
-import Upload from "../hooks/upload.js";
+import ProgressBar from "./ProgressBar.js";
 
 function Form() {
   const [image, setImage] = useState(null);
   const [caption, setCaption] = useState("");
   const [error, setError] = useState("");
-  const [postCaption, setPostCaption] = useState("");
-  const [postImage, setPostImage] = useState(null);
   let post = { image: image, caption: caption };
 
   const [imageExists, setImageExists] = useState(false);
@@ -16,7 +14,7 @@ function Form() {
 
   const handleUpload = (e) => {
     e.preventDefault();
-    console.log("submitted!");
+    setImageExists(true);
   };
 
   const handleImageChange = (event) => {
@@ -25,7 +23,7 @@ function Form() {
     if (imageChange && fileTypes.includes(imageChange.type)) {
       setImage(imageChange);
       setError("");
-      setImageExists(true);
+      setImageExists(false);
     } else {
       setError("Please upload file in PNG or JPEG format!");
       setImage(null);
@@ -35,11 +33,13 @@ function Form() {
   return (
     <div className="form_container">
       <br />
-      <form className="form" onSubmit={handleUpload}>
+      <form id="post_form" className="form" onSubmit={handleUpload}>
         <Button variant="outlined" component="label">
           Upload Image
           <input required type="file" onChange={(e) => handleImageChange(e)} />
         </Button>
+        <br />
+        <br />
         <div id="caption">
           <TextField
             onChange={(e) => setCaption(e.target.value)}
@@ -47,10 +47,17 @@ function Form() {
             label="Add a caption"
             variant="standard"
           />
-        </div>
-        <div className="output">
-          {error && <div className="error">{error}</div>}
-          {imageExists && <div className="imageName">{image.name}</div>}
+          <div className="output">
+            {error && <div className="error">{error}</div>}
+            {image && <div className="imageName">{image.name}</div>}
+            {image && imageExists && (
+              <ProgressBar
+                setImage={setImage}
+                post={post}
+                setCaption={setCaption}
+              />
+            )}
+          </div>
         </div>
 
         <Button type="submit" variant="outlined">

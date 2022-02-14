@@ -4,7 +4,7 @@
   border: 2px solid black;
   margin: 30px auto 30px;
   border-radius: 5px;
-  width: 15%;
+  width: 20%;
   overflow: hidden;
 }
 
@@ -16,6 +16,7 @@ label input {
 
 #caption {
   margin-bottom: 35px;
+  font-size: 12px;
 }
 
 .form button {
