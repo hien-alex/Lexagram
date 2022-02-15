@@ -1,17 +1,8 @@
 import "../css/Gallery.css";
-import { motion } from "framer-motion";
+import Retrieve from "../hooks/retrieve.js";
 
 const Gallery = () => {
-  const m = [1, 2, 3, 1, 2, 3, 4, 3, 2];
-  return (
-    <div className="image_container">
-      {m.map((doc) => (
-        <div className="image_wrap" whileHover={{ opacity: 1 }}>
-          ?
-        </div>
-      ))}
-    </div>
-  );
+  return Retrieve();
 };
 
 export default Gallery;
