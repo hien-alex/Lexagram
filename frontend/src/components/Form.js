@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../css/Form.css";
-import { Button, Paper, TextField } from "@material-ui/core";
+import { Button, TextField } from "@material-ui/core";
 import ProgressBar from "./ProgressBar.js";
 
 function Form() {

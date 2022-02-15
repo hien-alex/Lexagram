@@ -1,4 +1,4 @@
-import { storage } from "../firebase/config.js";
+import { storage, database, timestamp } from "../firebase/config.js";
 import { useState, useEffect } from "react";
 
 const Upload = (post) => {
@@ -11,6 +11,8 @@ const Upload = (post) => {
       .ref(`images/${post.image.name}`)
       .put(post.image);
 
+    const imageDatabase = database.collection("galleryRef");
+
     uploadImage.on(
       "state_changed",
       (snapshot) => {
@@ -21,14 +23,15 @@ const Upload = (post) => {
       (error) => {
         setError(error);
       },
-      () => {
-        storage
+      async () => {
+        const url = await storage
           .ref("images")
           .child(post.image.name)
-          .getDownloadURL()
-          .then((url) => {
-            setImageURL(url);
-          });
+          .getDownloadURL();
+        const time = timestamp();
+        const caption = post.caption;
+        imageDatabase.add({ url, time, caption });
+        setImageURL(url);
       }
     );
   }, [post.image]);

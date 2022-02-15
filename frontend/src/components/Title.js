@@ -13,7 +13,7 @@ function Title() {
   return (
     <div className="title">
       <h1>Lexagram</h1>
-      <p>Upload your own image with a caption!</p>
+      <p>Upload your own image with a caption.</p>
       <br />
       <button className="addButton" onClick={toggleForm}>
         <AiOutlinePlusCircle size={30} />
