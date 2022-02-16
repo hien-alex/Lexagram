@@ -14,6 +14,7 @@ function Form() {
 
   const handleUpload = (e) => {
     e.preventDefault();
+    setCaption("");
     setImageExists(true);
   };
 
@@ -46,6 +47,7 @@ function Form() {
             id="standard-basic"
             label="Add a caption"
             variant="standard"
+            value={caption}
           />
           <div className="output">
             {error && <div className="error">{error}</div>}
