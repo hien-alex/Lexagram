@@ -14,7 +14,6 @@ function Form() {
 
   const handleUpload = (e) => {
     e.preventDefault();
-    setCaption("");
     setImageExists(true);
   };
 
@@ -55,8 +54,8 @@ function Form() {
             {image && imageExists && (
               <ProgressBar
                 setImage={setImage}
-                post={post}
                 setCaption={setCaption}
+                post={post}
               />
             )}
           </div>

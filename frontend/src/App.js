@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Title from "../src/components/Title.js";
 import { ThemeProvider, createTheme } from "@material-ui/core/styles";
 import Gallery from "../src/components/Gallery.js";
+import Modal from "../src/components/Modal.js";
 
 const theme = createTheme({
   typography: {
@@ -11,12 +12,30 @@ const theme = createTheme({
 });
 
 function App() {
+  const [selectedImg, setSelectedImg] = useState(null);
+  const [selectedCaption, setSelectedCaption] = useState("");
+  const [selectedTime, setSelectedTime] = useState(null);
+
   return (
     <ThemeProvider>
       <div className="App">
         <Title />
-        <Gallery />
+        <Gallery
+          setSelectedImg={setSelectedImg}
+          setSelectedCaption={setSelectedCaption}
+          setSelectedTime={setSelectedTime}
+        />
       </div>
+      {selectedImg && selectedTime && (
+        <Modal
+          selectedImg={selectedImg}
+          selectedCaption={selectedCaption}
+          selectedTime={selectedTime}
+          setSelectedImg={setSelectedImg}
+          setSelectedCaption={setSelectedCaption}
+          setSelectedTime={setSelectedTime}
+        />
+      )}
     </ThemeProvider>
   );
 }
