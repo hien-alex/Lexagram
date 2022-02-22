@@ -25,11 +25,15 @@ const Modal = ({
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
     >
-      <div className="container">
+      <motion.div
+        className="container"
+        initial={{ y: "-100vh" }}
+        animate={{ y: 0 }}
+      >
         <img src={selectedImg} alt="Error" />
         <div className="caption">{selectedCaption}</div>
         <div className="time">{selectedTime}</div>
-      </div>
+      </motion.div>
     </motion.div>
   );
 };

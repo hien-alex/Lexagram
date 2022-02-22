@@ -17,7 +17,7 @@ function App() {
   const [selectedTime, setSelectedTime] = useState(null);
 
   return (
-    <ThemeProvider>
+    <ThemeProvider theme={theme}>
       <div className="App">
         <Title />
         <Gallery
@@ -25,17 +25,17 @@ function App() {
           setSelectedCaption={setSelectedCaption}
           setSelectedTime={setSelectedTime}
         />
+        {selectedImg && selectedTime && (
+          <Modal
+            selectedImg={selectedImg}
+            selectedCaption={selectedCaption}
+            selectedTime={selectedTime}
+            setSelectedImg={setSelectedImg}
+            setSelectedCaption={setSelectedCaption}
+            setSelectedTime={setSelectedTime}
+          />
+        )}
       </div>
-      {selectedImg && selectedTime && (
-        <Modal
-          selectedImg={selectedImg}
-          selectedCaption={selectedCaption}
-          selectedTime={selectedTime}
-          setSelectedImg={setSelectedImg}
-          setSelectedCaption={setSelectedCaption}
-          setSelectedTime={setSelectedTime}
-        />
-      )}
     </ThemeProvider>
   );
 }

@@ -1,8 +1,6 @@
 import "../css/Gallery.css";
 import Retrieve from "../hooks/retrieve.js";
-import { storage, database, timestamp } from "../firebase/config.js";
-import { animate, motion } from "framer-motion";
-import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
 const Gallery = ({ setSelectedImg, setSelectedCaption, setSelectedTime }) => {
   const { gallery } = Retrieve("galleryRef");
@@ -23,12 +21,13 @@ const Gallery = ({ setSelectedImg, setSelectedCaption, setSelectedTime }) => {
               setSelectedCaption(image.caption);
               convertTime(image.time);
             }}
+            layout
             whileHover={{ opacity: 1 }}
           >
             <motion.img
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.5 }}
+              transition={{ delay: 0.8 }}
               src={image.url}
               alt="Image Missing!"
             ></motion.img>

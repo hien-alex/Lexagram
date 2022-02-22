@@ -1,6 +1,7 @@
 .image_container {
+  padding-top: 30px;
   display: grid;
-  grid-gap: 5px;
+  grid-gap: 22px;
   grid-template-columns: 1fr 1fr 1fr;
   margin: 20px auto;
   width: 75%;
@@ -20,7 +21,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  max-width: 150%;
+  max-width: 120%;
   min-width: 100%;
   min-height: 100%;
 }
