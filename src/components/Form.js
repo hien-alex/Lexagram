@@ -10,7 +10,7 @@ function Form() {
   let post = { image: image, caption: caption };
 
   const [imageExists, setImageExists] = useState(false);
-  const fileTypes = ["image/png", "image/pdf"];
+  const fileTypes = ["image/png", "image/jpeg"];
 
   const handleUpload = (e) => {
     e.preventDefault();
